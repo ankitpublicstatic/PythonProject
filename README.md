@@ -52,5 +52,5 @@ Programs are organized into folders by topic:
 1. Clone or download the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/python_course_telusko.git
-cd python_course_telusko
+git clone https://github.com/YOUR_USERNAME/python_course.git
+cd python_course
