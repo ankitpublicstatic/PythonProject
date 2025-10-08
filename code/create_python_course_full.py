@@ -1,7 +1,7 @@
 import os
 
 # Root folder
-root = "python_course_telusko_full"
+root = "python_course_full"
 
 # Full folder structure with 31 programs, all fully commented
 folders = {
@@ -417,4 +417,4 @@ with open(os.path.join(root, "README.md"), "w") as f:
     f.write(readme_content)
 
 print(f"Folder '{root}' created with all programs!")
-print("You can now zip it with: zip -r python_course_telusko.zip python_course_telusko/")
+print("You can now zip it with: zip -r python_course.zip python_course/")
