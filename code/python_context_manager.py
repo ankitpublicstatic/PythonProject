@@ -362,4 +362,45 @@ async def make_connections(names):
 
 """
 3. Custom Async Locks or semaphores:
+Extend asyncio.Lock or implement from scratch for rate-limiting.
+
+4. Integration with Frameworks:
+FastAPI/Starlette: Use for DB Sessions (e.g., async SQLAlchemy).
+aiohttp: Sessions as async contexts.
+
+Differences from Synchronous Context Managers;
+
+Methods: __enter__, __exit__ (sync) > __aenter__, __aexit__ (async)
+
+Syntax: with > async with (in async def)
+
+Invocation: Direct call > Awaited implicitly
+
+Use Case: CPU-bound, simple resources > I/O-bound, concurrent(e.g., networks)
+
+Decorator: @contextmanager (generator) > @asynccontextmanager (async generator)
+
+Exception flow: Sync raises > Propagates via event looop
+
+Best Practices and Pitfalls:
+
+Always Await: Forget await in __aenter__ , __aexit__ ? It blocks-use async ops inside.
+
+Event Loop: RUn with asyncio.run() or in existing loop; no nesting asyncio.run()
+
+Cancellation: Handle CancelledError explicitly for graceful shutdowns.
+
+Testing: Use pytest-asyncio for async with in tests.
+Performance: Minimal overhead, but avoid in tight loops.
+
+Pitfalls:
+    Not interchangeable: Can't use sync in async with and vice versa.
+    __aexit__ must be async even if no awaits-It's a coroutine. 
+    In nested tasks, ensure proper propagation.
+    
+When to Use Class vs Decorator: Class for complex state/multiple methods, decorator for linear setup/teardown..
+
+Async context managers unlock non-blocking resource handling, making asyncio code robust. Experiment in an IPython kernel with %run for 
+quick tests For more, see Python docs on asyncio and contextlib. 
+    
 """
