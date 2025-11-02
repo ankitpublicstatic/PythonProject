@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "service": "RAG-Service",
+    "summary": "High latency during model load",
+    "severity": "medium"
+  },
+  {
+    "id": 2,
+    "service": "ETL",
+    "summary": "Pipeline failed on schema mismatch",
+    "severity": "high"
+  }
+]

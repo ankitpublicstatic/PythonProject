@@ -154,4 +154,61 @@ docker-compose up --build
 | `DOCKERHUB_USERNAME`    | (optional if using DockerHub)                |
 | `DOCKERHUB_TOKEN`       | (optional if using DockerHub)                |
 
+
+
+
+multi-rag-observability/
+│
+├── infrastructure/
+│   ├── main.tf                # Terraform root (Lambda, IAM, Secrets, CloudWatch)
+│   ├── variables.tf
+│   ├── outputs.tf
+│   ├── lambda.tf              # Lambda + schedule + permissions
+│   ├── s3.tf                  # Postmortem data bucket
+│   ├── dynamodb.tf            # Optional: store incident mappings
+│   ├── grafana.tf             # Optional: Grafana Cloud dashboard provisioning
+│   ├── redis.tf               # Redis (Elasticache) for caching
+│   ├── rds.tf                 # PostgreSQL DB for metadata
+│   ├── outputs.tf
+│   └── README.md
+│
+├── lambdas/
+│   ├── weekly_digest/
+│   │   ├── handler.py         # Summarize & send Slack messages
+│   │   ├── requirements.txt
+│   │   └── dashboard_map.json # Static mapping (can move to DynamoDB)
+│   │
+│   ├── data_collector/
+│   │   ├── handler.py         # Pull metrics/logs from Grafana, CloudWatch, and Confluence
+│   │   └── requirements.txt
+│   │
+│   ├── rag_service/
+│   │   ├── app.py             # FastAPI RAG inference with Redis + Pinecone + PostgreSQL
+│   │   ├── streamlit_ui.py    # Lightweight UI
+│   │   ├── ingest_pdfs.py     # PDF/HTML/code extractor
+│   │   ├── requirements.txt
+│   │   └── Dockerfile
+│
+├── dashboards/
+│   ├── grafana/
+│   │   ├── rag-service.json   # Grafana dashboard JSON for import
+│   │   └── etl-pipeline.json
+│   └── cloudwatch/
+│       └── metrics-dashboard.json
+│
+├── docs/
+│   ├── ARCHITECTURE.md
+│   ├── DEPLOYMENT.md
+│   ├── INTEGRATIONS.md
+│   ├── AI_SUMMARIZER_FLOW.md
+│   └── DASHBOARD_MAPPINGS.md
+│
+├── tests/
+│   ├── benchmark_chunking.py  # Tune RAG chunk size, reranking thresholds
+│   └── api_tests.py           # Test API endpoints
+│
+├── .env.example
+├── Makefile                   # Common commands (terraform init, apply, lambda package)
+└── README.md
+
 """

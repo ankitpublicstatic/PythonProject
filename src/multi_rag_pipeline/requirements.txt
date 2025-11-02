@@ -13,3 +13,8 @@ redis
 python-jose
 passlib[bcrypt]
 streamlit
+fpdf
+faker
+requests
+beautifulsoup4
+gitpython

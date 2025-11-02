@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "language": "Python",
+    "db": "PostgreSQL",
+    "cloud": "AWS"
+  },
+  {
+    "id": 2,
+    "language": "Java",
+    "db": "MongoDB",
+    "cloud": "Azure"
+  },
+  {
+    "id": 3,
+    "language": "Go",
+    "db": "DynamoDB",
+    "cloud": "AWS"
+  }
+]

@@ -1,0 +1,4 @@
+id,language,db,cloud
+1,Python,PostgreSQL,AWS
+2,Java,MongoDB,Azure
+3,Go,DynamoDB,AWS
