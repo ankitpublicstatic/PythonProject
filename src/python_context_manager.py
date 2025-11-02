@@ -5,7 +5,7 @@ statement, which guarantees that resources are properly acquired and released, e
 This is particaularly useful for handling files, database connections, lock or any scenario where you need to
 "enter" a context (Setup) and "exit" it (Cleanup).
 
-context manager helps prevent resources leaks and make code more readable by
+context manager helps prevent resources leaks and make src more readable by
 encapsulating the try-finally pattern. There were introduced in Python 2.5 via PEP 343
 and have a core feature since.
 
@@ -26,7 +26,7 @@ Here, open() returns a context manager that handles opening the file (__enter__)
 
 if an exception happens inside the with block the __exit__ method is still called, allowing for proper cleanup. 
 
-How Context manager work:
+How Context manager work: 
 A context manager is any object that implements two special methods. 
 
 __enter__(self): Called when entering the with block. It can return a value that's bound to the as variable (e.g. the file objects above)
@@ -160,7 +160,7 @@ with ExitStack() as stack:
 # All auto-closed
 
 # 2. Async Context Managers (Python 3.7+)
-# For async code, use __aenter__ and __aexit__ (Note the 'a' for async). or @asynccontextmanager from contextlib.
+# For async src, use __aenter__ and __aexit__ (Note the 'a' for async). or @asynccontextmanager from contextlib.
 
 from contextlib import asynccontextmanager
 import asyncio
@@ -237,7 +237,7 @@ For reusable managers, prefer classes; for one-offs, use decorators.
 Context managers are not thread-safe. by default, use locks if needed.
 Performance: Minimal overhead, but avoid in hot loops if unnecessary. 
 
-Context managers promote clean, exception-safe code. 
+Context managers promote clean, exception-safe src. 
 """
 
 from contextlib import asynccontextmanager
@@ -400,7 +400,7 @@ Pitfalls:
     
 When to Use Class vs Decorator: Class for complex state/multiple methods, decorator for linear setup/teardown..
 
-Async context managers unlock non-blocking resource handling, making asyncio code robust. Experiment in an IPython kernel with %run for 
+Async context managers unlock non-blocking resource handling, making asyncio src robust. Experiment in an IPython kernel with %run for 
 quick tests For more, see Python docs on asyncio and contextlib. 
     
 """

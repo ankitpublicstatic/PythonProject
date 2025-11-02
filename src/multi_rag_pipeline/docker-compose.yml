@@ -1,0 +1,36 @@
+version: "3.9"
+services:
+  redis:
+    image: redis:7.2-alpine
+    volumes:
+      - redis_data:/data
+    container_name: rag_redis
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    container_name: rag_api
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.ui
+    container_name: rag_ui
+    ports:
+      - "8501:8501"
+    depends_on:
+      - api
+    environment:
+      - API_BASE=http://api:8000

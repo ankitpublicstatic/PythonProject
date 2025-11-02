@@ -46,7 +46,7 @@ async def set_cookie(request: Request, response: Response):
 async def get_cookie(request: Request, response: Response):
     return {"cookie": request.cookies.get("my_cookie")}
 
-# Middleware: Custom code that runs before/after requests. Add via app.add_middleware()
+# Middleware: Custom src that runs before/after requests. Add via app.add_middleware()
 # Example: Session middleware
 
 from starlette.middleware.sessions import SessionMiddleware

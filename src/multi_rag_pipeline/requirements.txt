@@ -1,0 +1,15 @@
+langchain
+pinecone-client
+sentence-transformers
+rank-bm25
+openai
+psycopg2-binary
+beautifulsoup4
+pdfplumber
+python-dotenv
+faiss-cpu
+
+redis
+python-jose
+passlib[bcrypt]
+streamlit

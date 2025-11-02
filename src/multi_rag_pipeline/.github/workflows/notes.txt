@@ -1,0 +1,18 @@
+How It Works
+
+| Step                 | Description                                    |
+| -------------------- | ---------------------------------------------- |
+| 🧱 **build-test**    | Builds Docker images and runs tests            |
+| 📦 **push-to-ecr**   | Pushes images to AWS ECR registry              |
+| 🚀 **deploy-to-ecs** | Updates ECS service with new images            |
+| 🛠 **secrets**       | Manage credentials securely via GitHub Secrets |
+| 🔁 **auto-run**      | Triggered on every push to `main`              |
+
+
+| Layer                   | Tool                 |
+| ----------------------- | -------------------- |
+| RAG backend             | FastAPI              |
+| Cache                   | Redis                |
+| UI                      | Streamlit            |
+| Container orchestration | Docker Compose / ECS |
+| Continuous deployment   | GitHub Actions       |

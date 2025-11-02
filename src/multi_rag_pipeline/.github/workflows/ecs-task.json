@@ -1,0 +1,34 @@
+{
+  "family": "multi-rag-task",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": ["FARGATE"],
+  "cpu": "512",
+  "memory": "1024",
+  "containerDefinitions": [
+    {
+      "name": "multi-rag-api",
+      "image": "<account-id>.dkr.ecr.us-east-1.amazonaws.com/<repo>:api-latest",
+      "portMappings": [{
+        "containerPort": 8000
+      }],
+      "essential": true
+    },
+    {
+      "name": "multi-rag-ui",
+      "image": "<account-id>.dkr.ecr.us-east-1.amazonaws.com/<repo>:ui-latest",
+      "portMappings": [{
+        "containerPort": 8501
+      }],
+      "essential": true
+    },
+    {
+      "name": "redis",
+      "image": "redis:7.2-alpine",
+      "portMappings": [{
+        "containerPort": 6379
+      }],
+      "essential": true
+    }
+  ]
+}
+

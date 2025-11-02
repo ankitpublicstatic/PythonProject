@@ -93,7 +93,7 @@ def describe(**kwargs):
 describe(name="Ankit", age=20, mobile= "9828929839283") # name: Ankit\nage:20\mobile: "923982398"
 
 """
-Module and Imports: Modules are file with Python code. Use import to bring them in. 
+Module and Imports: Modules are file with Python src. Use import to bring them in. 
 Standard Library includes mats, os etc. 
 """
 
@@ -116,7 +116,7 @@ Garbage Collection (automatic memory management), and dynamic typing.
 """
 OOPs (Object-Oriented Programming)
 OOP in Python revolves around classes and objects. key principles: Encapsulation (Hiding Data)
-Inheritance (Reusing code), Polymorphism (Same interface, different implementation), and Abstraction (Hiding complexity) 
+Inheritance (Reusing src), Polymorphism (Same interface, different implementation), and Abstraction (Hiding complexity) 
 
 Classes and Objects: A class is a blueprint; an object is an instance of class
 """
@@ -256,7 +256,7 @@ print(car._Vechile__wheels) # 4 (but don't do this)
 
 """
 Decorator: Decorators are functions that modify the behavior of other functions or 
-classes without changing their code. They use @ syntax and are higher-order functions (take/return functions).
+classes without changing their src. They use @ syntax and are higher-order functions (take/return functions).
 """
 
 # Basic Decorator
@@ -363,7 +363,7 @@ often with conditions or transformations. Syntax: [expression for item in iterab
 List comprehensions are concise ways to create lists via for loops in one line. Syntax: [expr for item in iterable if condition]. They support nested loops, dict/set comprehensions too. More efficient than loops due to optimized bytecode.
 Depth: Compare performance, handle side effects carefully (e.g., no prints inside).
 
-List comps reduce code while improving readability/speed, but avoid complex logic inside.
+List comps reduce src while improving readability/speed, but avoid complex logic inside.
 """
 
 # Basic
@@ -543,7 +543,7 @@ def main_gen():
 for val in main_gen():
     print(val)
 
-# Generators are used in async code, data pipelines. They save memory vs lists (e.g., for infinite sequences).
+# Generators are used in async src, data pipelines. They save memory vs lists (e.g., for infinite sequences).
 
 # Generator function
 def fibonacci(limit):
