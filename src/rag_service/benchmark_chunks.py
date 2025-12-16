@@ -28,4 +28,3 @@ if __name__ == "__main__":
     query = "Explain circuit breaker design pattern"
     print("Chunk Benchmark: ",benchmark_chunk_sizes(query))
     print("Rerank Thresholds: ",benchmark_rerank_thresholds(query))
-

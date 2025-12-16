@@ -1,0 +1,14 @@
+# AI/ML Frameworks
+torch==2.1.0
+torchvision==0.16.0
+transformers<5.0.0,>=4.41.0
+
+# Image Processing
+opencv-python-headless==4.8.1.78
+Pillow==10.1.0
+
+# Vector DB Client
+qdrant-client==1.6.0
+
+huggingface-hub>=0.20.0
+sentence-transformers==5.1.2

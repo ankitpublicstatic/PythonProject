@@ -22,15 +22,11 @@ def query_multi_rag(query, vector_index, bm25, chunks, top_k=20):
     candidates = retrieve(query, vector_index, bm25, chunks, top_k)
     reranked = cross_rerank(query,candidates)[:5]
     context = "\n\n---\n\n".join([d.page_content for d in reranked])
-
     prompt = f""" 
-
-You are an expert assistant. Use only the context to answer accurately. 
-
-Context:{context}
-Question: {query}
-
-"""
+            You are an expert assistant. Use only the context to answer accurately.             
+            Context:{context}
+            Question: {query}            
+            """
     llm = OpenAI(temperature = 0)
     answer = llm(prompt)
     return answer
