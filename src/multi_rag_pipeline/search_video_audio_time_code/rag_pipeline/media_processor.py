@@ -7,7 +7,8 @@ from transformers import CLIPProcessor, CLIPModel
 from qdrant_client import QdrantClient
 from qdrant_client.http import models
 import uuid
-
+import boto3
+import psycopg2
 
 # Qdrant Vector DB Configuration
 QDRANT_HOST = os.environ.get('QDRANT_HOST','localhost')
@@ -16,7 +17,10 @@ COLLECTION_NAME = os.environ.get("COLLECTION_NAME")
 MODEL_ID = os.environ.get("MODEL_ID")
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-print(f"Initializing AI Model {MODEL_ID} on device {DEVICE}")
+S3_BUCKET = os.environ['S3_BUCKET']
+s3 = boto3.client('s3')
+
+print(f'Initializing AI Model {MODEL_ID} on device {DEVICE}')
 clip_model = CLIPModel.from_pretrained(MODEL_ID).to(DEVICE)
 clip_processor = CLIPProcessor.from_pretrained(MODEL_ID)
 
@@ -119,6 +123,10 @@ def process_and_index_video(file_path:str, asset_metadata: dict):
 
 
 # Main Execution Stub (Simulation of an SQS Event processor)
+
+def download_from_s3(s3_key, local_path):
+    s3.download_file(S3_BUCKET, s3_key, local_path)
+    return local_path
 
 if __name__ == "__main__":
     # Simulate receiving an event to process a new video asset

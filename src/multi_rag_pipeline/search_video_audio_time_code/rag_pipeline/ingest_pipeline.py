@@ -21,7 +21,7 @@ QDRANT_PORT = int(os.environ.get('QDRANT_PORT','6333'))
 OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
 POSTGRES_DSN = os.environ['POSTGRES_DSN']
 
-openai.api_key = OPENAI_API_KEY
+openai.api_key =  os.environ.get("OPENAI_API_KEY")
 
 s3 = boto3.client('s3')
 qdrant = QdrantClient(url=f'http://{QDRANT_HOST}:{QDRANT_PORT}')
