@@ -1,7 +1,6 @@
 import asyncio
 from retrievers import multi_retrieve
 from langchain.llms import OpenAI
-from sympy.physics.units import temperature
 
 llm = OpenAI(temperature=0)
 

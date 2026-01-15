@@ -13,13 +13,23 @@ def log_decorator(func):
         print(f"Running {func.__name__}")
         return func(*args, **kwargs)
     return wrapper
+
 @log_decorator
 def process_data():
     print("Processing...")
 
 process_data()
 
+def uppercase_decorator(func):
+    def wrapper(*args, **kwargs):
+        return "hello ankit".upper()
+    return wrapper
 
+
+
+@uppercase_decorator
+def greet_upper():
+    return "not used"
 
 def lowercase_decorator(func):
     def wrapper(*args, **kwargs):

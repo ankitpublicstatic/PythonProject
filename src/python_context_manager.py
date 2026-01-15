@@ -2,7 +2,7 @@
 Python context manager: Context managers in Python are a way to manage resources efficiently and safely,
 Ensuring that setup and cleanup actions are performed automatically. They are most common used with the "with"
 statement, which guarantees that resources are properly acquired and released, even if exceptions occur during execution.
-This is particaularly useful for handling files, database connections, lock or any scenario where you need to
+This is particularly useful for handling files, database connections, lock or any scenario where you need to
 "enter" a context (Setup) and "exit" it (Cleanup).
 
 context manager helps prevent resources leaks and make src more readable by
