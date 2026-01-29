@@ -1,6 +1,6 @@
 # __init__ and methods
 class Student:
-    school="Telusko"
+    school="Aks"
     def __init__(self,name,age):
         self.name=name
         self.age=age

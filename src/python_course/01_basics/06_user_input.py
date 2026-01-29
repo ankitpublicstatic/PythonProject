@@ -1,7 +1,8 @@
-# User input demo
+# User Input Demo
 def main():
-    name = input("Enter name: ")
-    age = int(input("Enter age: "))
-    print("Hello", name, "age:", age)
-if __name__ == "__main__":
+    name = input("Enter your name: ")
+    age = input("Enter your age: ")
+    print(name, age)
+
+if __name__ == '__main__':
     main()

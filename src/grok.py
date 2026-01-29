@@ -363,7 +363,7 @@ often with conditions or transformations. Syntax: [expression for item in iterab
 List comprehensions are concise ways to create lists via for loops in one line. Syntax: [expr for item in iterable if condition]. They support nested loops, dict/set comprehensions too. More efficient than loops due to optimized bytecode.
 Depth: Compare performance, handle side effects carefully (e.g., no prints inside).
 
-List comps reduce src while improving readability/speed, but avoid complex logic inside.
+List compreshensions reduce src while improving readability/speed, but avoid complex logic inside.
 """
 
 # Basic
