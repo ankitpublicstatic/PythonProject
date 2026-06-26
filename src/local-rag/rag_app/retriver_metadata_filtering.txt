@@ -1,0 +1,12 @@
+4️⃣ Metadata Filtering
+
+When retrieving:
+
+retriever = vectordb.as_retriever(
+    search_kwargs={
+        "k": 5,
+        "filter": {"source": "data/mydoc.pdf"}
+    }
+)
+
+You can filter by: filename tags document type

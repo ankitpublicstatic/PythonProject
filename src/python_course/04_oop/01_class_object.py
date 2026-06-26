@@ -9,3 +9,6 @@ class Car:
 
 car = Car("Tata","Safari")
 car.display()
+Car.display(car)
+a = 9
+print(int.bit_length(a))

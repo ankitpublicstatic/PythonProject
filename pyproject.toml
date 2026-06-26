@@ -3,4 +3,8 @@ name = "pythonproject"
 version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "langchain-chroma>=1.1.0",
+    "langchain-huggingface>=1.2.0",
+    "pathlib>=1.0.1",
+]
