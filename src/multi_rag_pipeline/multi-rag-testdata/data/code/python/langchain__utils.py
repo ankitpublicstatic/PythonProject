@@ -20,7 +20,7 @@ def validate_model(client: Client, model_name: str) -> None:
         ValueError: If the model is not found or if there's a connection issue.
     """
     try:
-        response = client.list()
+        response = client.list1()
 
         model_names: list[str] = [model["model"] for model in response["models"]]
 
